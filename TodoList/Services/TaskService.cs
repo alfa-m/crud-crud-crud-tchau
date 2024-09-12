@@ -10,9 +10,9 @@ public static class TaskService
     static TaskService()
     {
         Todo = new List<Task> {
-            new Task { Id = 1, Conteudo = "Fazer CRUD Todo List", estaFeita = false },
-            new Task { Id = 2, Conteudo = "Enviar CRUD pro GitHub", estaFeita = false },
-            new Task { Id = 3, Conteudo = "Tentar deploy em nuvem", estaFeita = false },
+            new Task { Id = 1, Conteudo = "Fazer CRUD Todo List", EstaFeita = false },
+            new Task { Id = 2, Conteudo = "Enviar CRUD pro GitHub", EstaFeita = false },
+            new Task { Id = 3, Conteudo = "Tentar deploy em nuvem", EstaFeita = false },
         };
     }
 
@@ -27,7 +27,7 @@ public static class TaskService
         Todo.Add(task);
     }
 
-    public static void Update(int id, Task task)
+    public static void Update(Task task)
     {
         var indice = Todo.FindIndex(tarefa => tarefa.Id == task.Id);
 
