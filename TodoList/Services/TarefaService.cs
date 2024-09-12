@@ -18,23 +18,23 @@ public static class TarefaService
 
     public static List<Tarefa> GetAll() => Todo;
 
-    public static Tarefa? Get(int id) => Todo.FirstOrDefault(tarefa => tarefa.Id == id);
+    public static Tarefa? Get(int id) => Todo.FirstOrDefault(t => t.Id == id);
 
-    public static void Add(Tarefa Tarefa)
+    public static void Add(Tarefa tarefa)
     {
         tarefa.Id = indiceAtual;
         indiceAtual++;
-        Todo.Add(Tarefa);
+        Todo.Add(tarefa);
     }
 
-    public static void Update(Tarefa Tarefa)
+    public static void Update(Tarefa tarefa)
     {
-        var indice = Todo.FindIndex(tarefa => tarefa.Id == Tarefa.Id);
+        var indice = Todo.FindIndex(t => t.Id == tarefa.Id);
 
         if (indice == -1)
             return;
 
-        Todo[indice] = Tarefa;
+        Todo[indice] = tarefa;
     }
 
     public static void Delete(int id)

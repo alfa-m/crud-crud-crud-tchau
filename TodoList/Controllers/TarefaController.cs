@@ -16,32 +16,32 @@ public class TarefaController : ControllerBase
     [HttpGet("{id}")]
     public ActionResult<Tarefa> Get(int id)
     {
-        var Tarefa = TarefaService.Get(id);
-        if (Tarefa == null)
+        var tarefa = TarefaService.Get(id);
+        if (tarefa == null)
             return NotFound();
 
-        return Tarefa;
+        return tarefa;
 
     }
 
     [HttpPost]
-    public IActionResult Create(Tarefa Tarefa)
+    public IActionResult Create(Tarefa tarefa)
     {
-        TarefaService.Add(Tarefa);
-        return CreatedAtAction(nameof(Get), new { id = Tarefa.Id }, Tarefa);
+        TarefaService.Add(tarefa);
+        return CreatedAtAction(nameof(Get), new { id = tarefa.Id }, tarefa);
     }
 
     [HttpPut("{id}")]
-    public IActionResult Update(int id, Tarefa Tarefa)
+    public IActionResult Update(int id, Tarefa tarefa)
     {
-        if (id != Tarefa.Id)
+        if (id != tarefa.Id)
             return BadRequest();
 
         var tarefaExistente = TarefaService.Get(id);
         if (tarefaExistente is null)
             return NotFound();
 
-        TarefaService.Update(Tarefa);
+        TarefaService.Update(tarefa);
         return NoContent();
     }
 
