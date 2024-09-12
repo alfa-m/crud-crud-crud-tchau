@@ -10,7 +10,7 @@ Accept: application/json
 
 ###
 
-GET {{TodoList_HostAddress}}/tarefa/3
+GET {{TodoList_HostAddress}}/tarefa/7
 Accept: application/json
 
 ###
