@@ -1,0 +1,7 @@
+D:\Polar Files\Documents\Computação\Projetos no Github\crud-crud-crud-tchau\TodoList\obj\Debug\net8.0\TodoList.csproj.AssemblyReference.cache
+D:\Polar Files\Documents\Computação\Projetos no Github\crud-crud-crud-tchau\TodoList\obj\Debug\net8.0\TodoList.GeneratedMSBuildEditorConfig.editorconfig
+D:\Polar Files\Documents\Computação\Projetos no Github\crud-crud-crud-tchau\TodoList\obj\Debug\net8.0\TodoList.AssemblyInfoInputs.cache
+D:\Polar Files\Documents\Computação\Projetos no Github\crud-crud-crud-tchau\TodoList\obj\Debug\net8.0\TodoList.AssemblyInfo.cs
+D:\Polar Files\Documents\Computação\Projetos no Github\crud-crud-crud-tchau\TodoList\obj\Debug\net8.0\TodoList.csproj.CoreCompileInputs.cache
+D:\Polar Files\Documents\Computação\Projetos no Github\crud-crud-crud-tchau\TodoList\obj\Debug\net8.0\TodoList.MvcApplicationPartsAssemblyInfo.cs
+D:\Polar Files\Documents\Computação\Projetos no Github\crud-crud-crud-tchau\TodoList\obj\Debug\net8.0\TodoList.MvcApplicationPartsAssemblyInfo.cache

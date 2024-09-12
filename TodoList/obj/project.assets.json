@@ -53,9 +53,7 @@
             "related": ".pdb;.xml"
           }
         },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        "frameworkReferences": ["Microsoft.AspNetCore.App"]
       },
       "Swashbuckle.AspNetCore.SwaggerGen/6.4.0": {
         "type": "package",
@@ -85,9 +83,7 @@
             "related": ".pdb;.xml"
           }
         },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        "frameworkReferences": ["Microsoft.AspNetCore.App"]
       }
     }
   },
@@ -200,8 +196,8 @@
         "tools/net461-x86/System.Text.Encoding.dll",
         "tools/net461-x86/System.Text.RegularExpressions.dll",
         "tools/net461-x86/System.Threading.Overlapped.dll",
-        "tools/net461-x86/System.Threading.Tasks.Parallel.dll",
-        "tools/net461-x86/System.Threading.Tasks.dll",
+        "tools/net461-x86/System.Threading.Tarefas.Parallel.dll",
+        "tools/net461-x86/System.Threading.Tarefas.dll",
         "tools/net461-x86/System.Threading.Thread.dll",
         "tools/net461-x86/System.Threading.ThreadPool.dll",
         "tools/net461-x86/System.Threading.Timer.dll",
@@ -303,8 +299,8 @@
         "tools/net461/System.Text.Encoding.dll",
         "tools/net461/System.Text.RegularExpressions.dll",
         "tools/net461/System.Threading.Overlapped.dll",
-        "tools/net461/System.Threading.Tasks.Parallel.dll",
-        "tools/net461/System.Threading.Tasks.dll",
+        "tools/net461/System.Threading.Tarefas.Parallel.dll",
+        "tools/net461/System.Threading.Tarefas.dll",
         "tools/net461/System.Threading.Thread.dll",
         "tools/net461/System.Threading.ThreadPool.dll",
         "tools/net461/System.Threading.Timer.dll",
@@ -423,9 +419,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net8.0": [
-      "Swashbuckle.AspNetCore >= 6.4.0"
-    ]
+    "net8.0": ["Swashbuckle.AspNetCore >= 6.4.0"]
   },
   "packageFolders": {
     "C:\\Users\\arufa\\.nuget\\packages\\": {}
@@ -442,9 +436,7 @@
       "configFilePaths": [
         "C:\\Users\\arufa\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
-      "originalTargetFrameworks": [
-        "net8.0"
-      ],
+      "originalTargetFrameworks": ["net8.0"],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -455,9 +447,7 @@
         }
       },
       "warningProperties": {
-        "warnAsError": [
-          "NU1605"
-        ]
+        "warnAsError": ["NU1605"]
       },
       "restoreAuditProperties": {
         "enableAudit": "true",
