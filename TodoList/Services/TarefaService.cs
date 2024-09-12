@@ -44,6 +44,6 @@ public static class TarefaService
         if (tarefa is null)
             return;
 
-        Todo.Remove(Tarefa);
+        Todo.Remove(tarefa);
     }
 }
