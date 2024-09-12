@@ -8,3 +8,22 @@ Accept: application/json
 
 GET {{TodoList_HostAddress}}/todolist/3
 Accept: application/json
+
+POST {{TodoList_HostAddress}}/todolist
+Content-Type: application/json
+
+{
+    "conteudo": "Hidratar o cabelo",
+    "estaFeita": false
+}
+
+PUT {{TodoList_HostAddress}}/todolist/4
+Content-Type: application/json
+
+{
+    "id": 4,
+    "conteudo": "Lavar e hidratar o cabelo",
+    "estaFeita": false
+}
+
+DELETE {{TodoList_HostAddress}}/todolist/4
