@@ -1,15 +1,21 @@
 @TodoList_HostAddress = http://localhost:5272
 
-GET {{TodoList_HostAddress}}/todolist/
+GET {{TodoList_HostAddress}}/tarefa/
 Accept: application/json
 
-GET {{TodoList_HostAddress}}/todolist/1
+###
+
+GET {{TodoList_HostAddress}}/tarefa/1
 Accept: application/json
 
-GET {{TodoList_HostAddress}}/todolist/3
+###
+
+GET {{TodoList_HostAddress}}/tarefa/3
 Accept: application/json
 
-POST {{TodoList_HostAddress}}/todolist
+###
+
+POST {{TodoList_HostAddress}}/tarefa
 Content-Type: application/json
 
 {
@@ -17,7 +23,9 @@ Content-Type: application/json
     "estaFeita": false
 }
 
-PUT {{TodoList_HostAddress}}/todolist/4
+###
+
+PUT {{TodoList_HostAddress}}/tarefa/4
 Content-Type: application/json
 
 {
@@ -26,4 +34,6 @@ Content-Type: application/json
     "estaFeita": false
 }
 
-DELETE {{TodoList_HostAddress}}/todolist/4
+###
+
+DELETE {{TodoList_HostAddress}}/tarefa/4
