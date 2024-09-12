@@ -16,6 +16,7 @@ D:\Polar Files\Documents\Computação\Projetos no Github\crud-crud-crud-tchau\To
 D:\Polar Files\Documents\Computação\Projetos no Github\crud-crud-crud-tchau\TodoList\obj\Debug\net8.0\TodoList.csproj.CoreCompileInputs.cache
 D:\Polar Files\Documents\Computação\Projetos no Github\crud-crud-crud-tchau\TodoList\obj\Debug\net8.0\TodoList.MvcApplicationPartsAssemblyInfo.cs
 D:\Polar Files\Documents\Computação\Projetos no Github\crud-crud-crud-tchau\TodoList\obj\Debug\net8.0\TodoList.MvcApplicationPartsAssemblyInfo.cache
+D:\Polar Files\Documents\Computação\Projetos no Github\crud-crud-crud-tchau\TodoList\obj\Debug\net8.0\TodoList.sourcelink.json
 D:\Polar Files\Documents\Computação\Projetos no Github\crud-crud-crud-tchau\TodoList\obj\Debug\net8.0\staticwebassets.build.json
 D:\Polar Files\Documents\Computação\Projetos no Github\crud-crud-crud-tchau\TodoList\obj\Debug\net8.0\staticwebassets.development.json
 D:\Polar Files\Documents\Computação\Projetos no Github\crud-crud-crud-tchau\TodoList\obj\Debug\net8.0\staticwebassets\msbuild.TodoList.Microsoft.AspNetCore.StaticWebAssets.props
