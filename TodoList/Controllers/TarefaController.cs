@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace TodoList.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("todo")]
 public class TarefaController : ControllerBase
 {
     public TarefaController() { }
