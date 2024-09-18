@@ -10,8 +10,8 @@ public static class TarefaService
     static TarefaService()
     {
         Todo = new List<Tarefa> {
-            new Tarefa { Id = 1, Conteudo = "Fazer CRUD Todo List", EstaFeita = false },
-            new Tarefa { Id = 2, Conteudo = "Enviar CRUD pro GitHub", EstaFeita = false },
+            new Tarefa { Id = 1, Conteudo = "Fazer CRUD Todo List", EstaFeita = true },
+            new Tarefa { Id = 2, Conteudo = "Enviar CRUD pro GitHub", EstaFeita = true },
             new Tarefa { Id = 3, Conteudo = "Tentar deploy em nuvem", EstaFeita = false },
         };
     }
