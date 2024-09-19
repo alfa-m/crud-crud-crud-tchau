@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace TodoList.Services;
 
-public static class TarefaService
+public class TarefaService
 {
     /*
     static List<Tarefa> Todo { get; }

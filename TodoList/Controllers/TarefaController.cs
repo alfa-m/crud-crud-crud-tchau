@@ -21,9 +21,9 @@ public class TarefaController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public ActionResult<Tarefa> Get(int id)
+    public ActionResult<Tarefa> GetById(int id)
     {
-        var tarefa = _service.GetById(int id);
+        var tarefa = _service.GetById(id);
         if (tarefa is not null){
             return tarefa;
         }

@@ -12,9 +12,7 @@ namespace TodoList.Data
                 return;
             }
 
-            static TarefaService()
-
-            var todo = new List<Tarefa> {
+            var todo = new Tarefa[] {
                 new Tarefa { Id = 1, Conteudo = "Fazer CRUD Todo List", EstaFeita = true },
                 new Tarefa { Id = 2, Conteudo = "Enviar CRUD pro GitHub", EstaFeita = true },
                 new Tarefa { Id = 3, Conteudo = "Tentar deploy em nuvem", EstaFeita = false },
