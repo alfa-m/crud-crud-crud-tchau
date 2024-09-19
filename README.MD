@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Implementação de uma lista de tarefas usando ASP.NET.
+Implementação de uma lista de tarefas usando ASP.NET. Versão com implementação de persistência de dados usando EF Core. Refatorando código para passar de SQLite para PostgreSQL.
 
 ## Funções
 
