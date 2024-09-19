@@ -30,18 +30,18 @@ Content-Type: application/json
 
 ###
 
-PUT {{TodoList_HostAddress}}/todo/4/atualizatarefa
+PUT {{TodoList_HostAddress}}/todo/5/atualizatarefa
 Content-Type: application/json
 
 {
-    "id": 4,
+    "id": 5,
     "conteudo": "Lavar e hidratar o cabelo",
     "estaFeita": true
 }
 
 ###
-PUT {{TodoList_HostAddress}}/todo/4/atualizastatus
+PUT {{TodoList_HostAddress}}/todo/5/atualizastatus
 
 ###
 
-DELETE {{TodoList_HostAddress}}/todo/4
+DELETE {{TodoList_HostAddress}}/todo/5

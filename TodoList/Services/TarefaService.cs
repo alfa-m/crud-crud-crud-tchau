@@ -40,9 +40,12 @@ public class TarefaService
         var tarefaParaAtualizar = _context.Todo.Find(id);
 
         if (tarefaParaAtualizar is null)
+        {
             throw new InvalidOperationException("Não existe tarefa com o id informado");
+        }
 
-        tarefaParaAtualizar = tarefaAtualizada;
+        tarefaParaAtualizar.Conteudo = tarefaAtualizada.Conteudo;
+        tarefaParaAtualizar.EstaFeita = tarefaAtualizada.EstaFeita;
 
         _context.SaveChanges();
     }
