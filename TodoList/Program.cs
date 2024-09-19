@@ -11,6 +11,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSqlite<TarefaContext>("Data Source=TodoList.db");
 
+builder.Services.AddScoped<TarefaService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
