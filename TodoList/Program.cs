@@ -7,7 +7,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSqlite<TarefaContext>("Data Source=TodoList.db");
+//builder.Services.AddSqlite<TarefaContext>("Data Source=TodoList.db");
+var Configuration = builder.Configuration;
+builder.AddNpgsqlDbContext<TarefaContext>("myConnection");
 
 builder.Services.AddScoped<TarefaService>();
 
