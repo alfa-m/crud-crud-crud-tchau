@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Implementação de uma lista de tarefas usando ASP.NET.
+Implementação de uma lista de tarefas usando ASP.NET. Versão sem implementação da persistência de dados.
 
 ## Funções
 
