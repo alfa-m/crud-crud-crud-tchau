@@ -26,4 +26,8 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.CreateDbIfNotExists();
+
+app.MapGet("/", () => @"API TodoList. Acesse /swagger para ver a interface de teste do Swagger.");
+
 app.Run();
