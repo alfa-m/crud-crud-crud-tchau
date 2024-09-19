@@ -1,74 +1,49 @@
 using TodoList.Models;
-using TodoList.Data;
-using Microsoft.EntityFrameworkCore;
 
 namespace TodoList.Services;
 
-public class TarefaService
+public static class TarefaService
 {
-    private readonly TarefaContext _context;
+    static List<Tarefa> Todo { get; }
+    static int indiceAtual = 4;
 
-    public TarefaService(TarefaContext context)
+    static TarefaService()
     {
-        _context = context;
+        Todo = new List<Tarefa> {
+            new Tarefa { Id = 1, Conteudo = "Fazer CRUD Todo List", EstaFeita = false },
+            new Tarefa { Id = 2, Conteudo = "Enviar CRUD pro GitHub", EstaFeita = false },
+            new Tarefa { Id = 3, Conteudo = "Tentar deploy em nuvem", EstaFeita = false },
+        };
     }
 
-    public IEnumerable<Tarefa> GetAll()
+    public static List<Tarefa> GetAll() => Todo;
+
+    public static Tarefa? Get(int id) => Todo.FirstOrDefault(t => t.Id == id);
+
+    public static void Add(Tarefa tarefa)
     {
-        return _context.Todo
-            .AsNoTracking()
-            .ToList();
+        tarefa.Id = indiceAtual;
+        indiceAtual++;
+        Todo.Add(tarefa);
     }
 
-    public Tarefa? GetById(int id)
+    public static void Update(Tarefa tarefa)
     {
-        return _context.Todo
-            .AsNoTracking()
-            .SingleOrDefault(t => t.Id == id);
+        var indice = Todo.FindIndex(t => t.Id == tarefa.Id);
+
+        if (indice == -1)
+            return;
+
+        Todo[indice] = tarefa;
     }
 
-    public Tarefa Create(Tarefa novaTarefa)
+    public static void Delete(int id)
     {
-        _context.Todo.Add(novaTarefa);
-        _context.SaveChanges();
+        var tarefa = Get(id);
 
-        return novaTarefa;
-    }
+        if (tarefa is null)
+            return;
 
-    public void UpdateTask(int id, Tarefa tarefaAtualizada)
-    {
-        var tarefaParaAtualizar = _context.Todo.Find(id);
-
-        if (tarefaParaAtualizar is null)
-        {
-            throw new InvalidOperationException("Não existe tarefa com o id informado");
-        }
-
-        tarefaParaAtualizar.Conteudo = tarefaAtualizada.Conteudo;
-        tarefaParaAtualizar.EstaFeita = tarefaAtualizada.EstaFeita;
-
-        _context.SaveChanges();
-    }
-
-    public void UpdateStatus(int id)
-    {
-        var tarefaParaAtualizar = _context.Todo.Find(id);
-
-        if (tarefaParaAtualizar is null)
-            throw new InvalidOperationException("Não existe tarefa com o id informado");
-
-        tarefaParaAtualizar.EstaFeita = !(tarefaParaAtualizar.EstaFeita);
-
-        _context.SaveChanges();
-    }
-
-    public void DeleteById(int id)
-    {
-        var tarefaParaApagar = _context.Todo.Find(id);
-        if (tarefaParaApagar is not null)
-        {
-            _context.Todo.Remove(tarefaParaApagar);
-            _context.SaveChanges();
-        }
+        Todo.Remove(tarefa);
     }
 }

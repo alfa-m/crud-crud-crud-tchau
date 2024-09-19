@@ -5,89 +5,54 @@ using Microsoft.AspNetCore.Mvc;
 namespace TodoList.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("todo")]
 public class TarefaController : ControllerBase
 {
-    TarefaService _service;
-
-    public TarefaController(TarefaService service)
-    {
-        _service = service;
-    }
+    public TarefaController() { }
 
     [HttpGet]
-    public IEnumerable<Tarefa> GetAll()
-    {
-        return _service.GetAll();
-    }
+    public ActionResult<List<Tarefa>> GetAll() => TarefaService.GetAll();
 
     [HttpGet("{id}")]
-    public ActionResult<Tarefa> GetById(int id)
+    public ActionResult<Tarefa> Get(int id)
     {
-        var tarefa = _service.GetById(id);
-        if (tarefa is not null)
-        {
-            return tarefa;
-        }
-        else
-        {
+        var tarefa = TarefaService.Get(id);
+        if (tarefa == null)
             return NotFound();
-        }
+
+        return tarefa;
+
     }
 
     [HttpPost]
-    public IActionResult Create(Tarefa novaTarefa)
+    public IActionResult Create(Tarefa tarefa)
     {
-        var tarefa = _service.Create(novaTarefa);
-        return CreatedAtAction(nameof(GetById), new { id = tarefa!.Id }, tarefa);
+        TarefaService.Add(tarefa);
+        return CreatedAtAction(nameof(Get), new { id = tarefa.Id }, tarefa);
     }
 
-    [HttpPut("{id}/atualizatarefa")]
-    public IActionResult UpdateTask(int id, Tarefa tarefaAtualizada)
+    [HttpPut("{id}")]
+    public IActionResult Update(int id, Tarefa tarefa)
     {
-        var tarefaParaAtualizar = _service.GetById(id);
+        if (id != tarefa.Id)
+            return BadRequest();
 
-        if (tarefaParaAtualizar is not null)
-        {
-            _service.UpdateTask(id, tarefaAtualizada);
-            return NoContent();
-
-        }
-        else
-        {
+        var tarefaExistente = TarefaService.Get(id);
+        if (tarefaExistente is null)
             return NotFound();
-        }
-    }
 
-    [HttpPut("{id}/atualizastatus")]
-    public IActionResult UpdateStatus(int id)
-    {
-        var tarefaParaAtualizar = _service.GetById(id);
-
-        if (tarefaParaAtualizar is not null)
-        {
-            _service.UpdateStatus(id);
-            return NoContent();
-
-        }
-        else
-        {
-            return NotFound();
-        }
+        TarefaService.Update(tarefa);
+        return NoContent();
     }
 
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
-        var tarefaParaApagar = _service.GetById(id);
-        if (tarefaParaApagar is not null)
-        {
-            _service.DeleteById(id);
-            return NoContent();
-        }
-        else
-        {
+        var tarefaExistente = TarefaService.Get(id);
+        if (tarefaExistente is null)
             return NotFound();
-        }
+
+        TarefaService.Delete(id);
+        return NoContent();
     }
 }
