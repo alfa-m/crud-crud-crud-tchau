@@ -16,7 +16,8 @@ public class TarefaController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<Tarefa> GetAll(){
+    public IEnumerable<Tarefa> GetAll()
+    {
         return _service.GetAll();
     }
 
@@ -24,7 +25,8 @@ public class TarefaController : ControllerBase
     public ActionResult<Tarefa> GetById(int id)
     {
         var tarefa = _service.GetById(id);
-        if (tarefa is not null){
+        if (tarefa is not null)
+        {
             return tarefa;
         }
         else
@@ -40,12 +42,30 @@ public class TarefaController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = tarefa!.Id }, tarefa);
     }
 
-    [HttpPut("{id}/updatestatus")]
+    [HttpPut("{id}/atualizatarefa")]
+    public IActionResult UpdateTask(int id, Tarefa tarefaAtualizada)
+    {
+        var tarefaParaAtualizar = _service.GetById(id);
+
+        if (tarefaParaAtualizar is not null)
+        {
+            _service.UpdateTask(id, tarefaAtualizada);
+            return NoContent();
+
+        }
+        else
+        {
+            return NotFound();
+        }
+    }
+
+    [HttpPut("{id}/atualizastatus")]
     public IActionResult UpdateStatus(int id)
     {
         var tarefaParaAtualizar = _service.GetById(id);
 
-        if (tarefaParaAtualizar is not null){
+        if (tarefaParaAtualizar is not null)
+        {
             _service.UpdateStatus(id);
             return NoContent();
 
@@ -60,7 +80,8 @@ public class TarefaController : ControllerBase
     public IActionResult Delete(int id)
     {
         var tarefaParaApagar = _service.GetById(id);
-        if (tarefaParaApagar is not null){
+        if (tarefaParaApagar is not null)
+        {
             _service.DeleteById(id);
             return NoContent();
         }

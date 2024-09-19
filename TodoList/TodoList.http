@@ -1,5 +1,10 @@
 @TodoList_HostAddress = http://localhost:5272
 
+GET {{TodoList_HostAddress}}/
+Accept: application/json
+
+###
+
 GET {{TodoList_HostAddress}}/todo/
 Accept: application/json
 
@@ -25,14 +30,17 @@ Content-Type: application/json
 
 ###
 
-PUT {{TodoList_HostAddress}}/todo/4
+PUT {{TodoList_HostAddress}}/todo/4/atualizatarefa
 Content-Type: application/json
 
 {
     "id": 4,
     "conteudo": "Lavar e hidratar o cabelo",
-    "estaFeita": false
+    "estaFeita": true
 }
+
+###
+PUT {{TodoList_HostAddress}}/todo/4/atualizastatus
 
 ###
 

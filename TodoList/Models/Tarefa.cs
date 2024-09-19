@@ -8,6 +8,6 @@ public class Tarefa
 
     [Required]
     [MaxLength(100)]
-    public string Conteudo { get; set; }
-    public bool EstaFeita { get; set; }
+    public string Conteudo { get; set; } = "Insira a tarefa";
+    public bool EstaFeita { get; set; } = false;
 }
