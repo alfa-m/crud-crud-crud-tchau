@@ -8,51 +8,65 @@ namespace TodoList.Controllers;
 [Route("todo")]
 public class TarefaController : ControllerBase
 {
-    public TarefaController() { }
+    TarefaService _service;
+
+    public TarefaController(TarefaService service)
+    {
+        _service = service;
+    }
 
     [HttpGet]
-    public ActionResult<List<Tarefa>> GetAll() => TarefaService.GetAll();
+    public IEnumerable<Tarefa> GetAll(){
+        return _service.GetAll();
+    }
 
     [HttpGet("{id}")]
     public ActionResult<Tarefa> Get(int id)
     {
-        var tarefa = TarefaService.Get(id);
-        if (tarefa == null)
+        var tarefa = _service.GetById(int id);
+        if (tarefa is not null){
+            return tarefa;
+        }
+        else
+        {
             return NotFound();
-
-        return tarefa;
-
+        }
     }
 
     [HttpPost]
-    public IActionResult Create(Tarefa tarefa)
+    public IActionResult Create(Tarefa novaTarefa)
     {
-        TarefaService.Add(tarefa);
-        return CreatedAtAction(nameof(Get), new { id = tarefa.Id }, tarefa);
+        var tarefa = _service.Create(novaTarefa);
+        return CreatedAtAction(nameof(GetById), new { id = tarefa!.Id }, tarefa);
     }
 
-    [HttpPut("{id}")]
-    public IActionResult Update(int id, Tarefa tarefa)
+    [HttpPut("{id}/updatestatus")]
+    public IActionResult UpdateStatus(int id)
     {
-        if (id != tarefa.Id)
-            return BadRequest();
+        var tarefaParaAtualizar = _service.GetById(id);
 
-        var tarefaExistente = TarefaService.Get(id);
-        if (tarefaExistente is null)
+        if (tarefaParaAtualizar is not null){
+            _service.UpdateStatus(id);
+            return NoContent();
+
+        }
+        else
+        {
             return NotFound();
-
-        TarefaService.Update(tarefa);
-        return NoContent();
+        }
     }
 
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
-        var tarefaExistente = TarefaService.Get(id);
-        if (tarefaExistente is null)
+        var tarefaParaApagar = _service.GetById(id);
+        if (tarefaParaApagar is not null){
+            _service.DeleteById(id);
+            return NoContent();
+        }
+        else
+        {
             return NotFound();
-
-        TarefaService.Delete(id);
-        return NoContent();
+        }
     }
 }
